@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import fonts from assets */
+@font-face {
+  font-family: 'EuropaGroNr2SB-Rom';
+  src: url('/fonts/EuropaGroNr2SB-Rom.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EuropaGroNr2SH-Bol';
+  src: url('/fonts/EuropaGroNr2SH-Bol.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EuropaGroNr2SH-Rom';
+  src: url('/fonts/EuropaGroNr2SH-Rom.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EuropaGroNr2SB-Bol';
+  src: url('/fonts/EuropaGroNr2SB-Bol.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    /* Primary colors */
+    --primary: 240 10% 3.9%; /* Black */
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary colors */
+    --secondary: 240 4.8% 95.9%; /* Light Gray */
+    --secondary-foreground: 240 5.9% 10%;
+
+    /* Accent colors */
+    --accent: 240 4.8% 95.9%; /* Sand/Beige */
+    --accent-foreground: 240 5.9% 10%;
+
+    /* Muted colors */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    /* Border colors */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+
+    /* Ring color */
+    --ring: 240 10% 3.9%;
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Rains specific colors */
+    --rains-black: 240 10% 3.9%; /* #242425 */
+    --rains-white: 0 0% 98%; /* #f7f7f7 */
+    --rains-gray: 220 3% 55%; /* #898989 */
+    --rains-beige: 36 25% 75%; /* #d3c7b3 */
+    --rains-navy: 210 29% 24%; /* #2a3c4d */
+    --rains-green: 120 12% 25%; /* #3a4138 */
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'EuropaGroNr2SH-Rom', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'EuropaGroNr2SB-Bol', sans-serif;
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .rains-container {
+    @apply w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .notification-bar {
+    @apply bg-[#242425] text-white text-xs py-1 text-center;
+  }
+}
+
+/* Rains specific component styling */
+.rains-button {
+  @apply rounded-none border border-black px-6 py-3 text-sm uppercase font-medium hover:bg-black hover:text-white transition-colors;
+}
+
+.rains-link {
+  @apply text-sm uppercase font-medium hover:underline;
+}
+
+.rains-hero-text {
+  @apply text-[72px] md:text-[120px] font-bold text-white uppercase leading-none;
+}
